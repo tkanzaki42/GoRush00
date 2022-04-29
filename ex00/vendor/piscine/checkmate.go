@@ -1,6 +1,11 @@
 package piscine
 
 func Checkmate(str []string) {
-	Validate(str)
-	CheckmateKing(str)
+	errorMessage := Validate(str)
+	if errorMessage != "" {
+		PutError(errorMessage)
+		return
+	}
+	x, y := GetKingPosition()
+	CheckmateKing(x, y, str)
 }
