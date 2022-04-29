@@ -6,6 +6,6 @@ func Checkmate(str []string) {
 		PutError(errorMessage)
 		return
 	}
-	x, y := GetKingPosition()
+	x, y := GetKingPosition(str)
 	CheckmateKing(x, y, str)
 }
