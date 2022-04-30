@@ -7,5 +7,7 @@ func Checkmate(str []string) {
 		return
 	}
 	x, y := GetKingPosition(str)
-	CheckmateKing(x, y, str)
+	w, h := GetBoardSize(str)
+	message := CheckmateKing(x, y, w, h, str)
+	PutError(message)
 }
