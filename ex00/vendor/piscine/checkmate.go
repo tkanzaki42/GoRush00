@@ -7,6 +7,10 @@ func Checkmate(str []string) {
 		return
 	}
 	x, y, size := GetKingPosition(str)
-	message := IsWinning(x, y, size, str)
-	PutMsg(message)
+	incheck := IsInCheck(x, y, size, str)
+	if incheck {
+		PutMsg("Success")
+	} else {
+		PutMsg("Fail")
+	}
 }
