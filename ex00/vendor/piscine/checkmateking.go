@@ -56,37 +56,40 @@ func CheckLowerLeft(x int, y int, w int, h int, board []string) bool {
 }
 
 func CheckUpperLeft(x int, y int, w int, h int, board []string) bool {
-	row := 0
-	for col, _ := range board {
-		if col == y {
-			break
+	row := x - 1
+	col := y - 1
+	for {
+		if col < 0 || row < 0 {
+			return false
 		}
-		row = col
-		if row > w {
-			break
-		}
-		if board[col][row] == 'Q' || board[col][row] == 'B' {
+		switch board[col][row] {
+		case 'Q', 'B':
 			return true
+		case 'P', 'R':
+			return false
 		}
+		row--
+		col--
 	}
 	return false
 }
 
 func CheckUpperRight(x int, y int, w int, h int, board []string) bool {
-	row := (x+1)*2 - 1
-	for col, _ := range board {
-		if col == y {
-			break
+	row := x + 1
+	col := y - 1
+	for {
+		if col < 0 || row > w {
+			return false
 		}
-		row -= col
-		if row < 0 {
-			break
-		}
-		if board[col][row] == 'Q' || board[col][row] == 'B' {
+		switch board[col][row] {
+		case 'Q', 'B':
 			return true
+		case 'P', 'R':
+			return false
 		}
+		row++
+		col--
 	}
-	return false
 }
 
 func CheckRight(x int, y int, w int, h int, board []string) bool {
