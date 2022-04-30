@@ -8,6 +8,6 @@ func Checkmate(str []string) {
 	}
 	x, y := GetKingPosition(str)
 	w, h := GetBoardSize(str)
-	message := CheckmateKing(x, y, w, h, str)
+	message := IsWinning(x, y, w, h, str)
 	PutMsg(message)
 }
