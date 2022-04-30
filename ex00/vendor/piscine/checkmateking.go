@@ -79,6 +79,9 @@ func CheckUpperRight(x int, y int, w int, h int, board []string) bool {
 			break
 		}
 		row -= col
+		if row > w {
+			continue
+		}
 		if row < 0 {
 			break
 		}
