@@ -21,7 +21,7 @@ func Validate(board []string) string{
 		pre_col = len_col
 	}
 	if len_col != len_row {
-		return "Not a square"
+		return "Not a square."
 	}
 	if k_count != 1 {
 		return "The number of kings is wrong."
