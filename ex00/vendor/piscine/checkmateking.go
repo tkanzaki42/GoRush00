@@ -16,41 +16,53 @@ func CheckmateKing(x int, y int, w int, h int, board []string) string {
 }
 
 func CheckLowerRight(x int, y int, w int, h int, board []string) bool {
-	row := 0
-	for col, _ := range board {
-		if col <= y {
-			continue
-		}
-		row = col
+	col := y + 1
+	row := x + 1
+	for col <= h {
 		if row > w {
 			break
 		}
 		if row == x+1 && board[col][row] == 'P' {
 			return true
 		}
-		if board[col][row] == 'Q' || board[col][row] == 'B' {
+		switch board[col][row] {
+		case 'R':
+			return false
+		case 'P':
+			return false
+		case 'Q':
+			return true
+		case 'B':
 			return true
 		}
+		row++
+		col++
 	}
 	return false
 }
 
 func CheckLowerLeft(x int, y int, w int, h int, board []string) bool {
-	row := x
-	for col, _ := range board {
-		if col <= y {
-			continue
-		}
-		row -= col - y
+	col := y + 1
+	row := x - 1
+	for col <= h {
 		if row < 0 {
 			break
 		}
 		if row == x-1 && board[col][row] == 'P' {
 			return true
 		}
-		if board[col][row] == 'Q' || board[col][row] == 'B' {
+		switch board[col][row] {
+		case 'R':
+			return false
+		case 'P':
+			return false
+		case 'Q':
+			return true
+		case 'B':
 			return true
 		}
+		row--
+		col++
 	}
 	return false
 }
@@ -93,49 +105,77 @@ func CheckUpperRight(x int, y int, w int, h int, board []string) bool {
 }
 
 func CheckRight(x int, y int, w int, h int, board []string) bool {
-	for row, _ := range board[y] {
-		if row <= x {
-			continue
-		}
-		if board[y][row] == 'Q' || board[y][row] == 'R' {
+	col := y
+	row := x + 1
+	for row <= w {
+		switch board[col][row] {
+		case 'R':
 			return true
+		case 'P':
+			return false
+		case 'Q':
+			return true
+		case 'B':
+			return false
 		}
+		row++
 	}
 	return false
 }
 
 func CheckLeft(x int, y int, w int, h int, board []string) bool {
-	for row, _ := range board[y] {
-		if row == x {
-			break
-		}
-		if board[y][row] == 'Q' || board[y][row] == 'R' {
+	col := y
+	row := x - 1
+	for row >= 0 {
+		switch board[col][row] {
+		case 'R':
 			return true
+		case 'P':
+			return false
+		case 'Q':
+			return true
+		case 'B':
+			return false
 		}
+		row--
 	}
 	return false
 }
 
 func CheckDown(x int, y int, w int, h int, board []string) bool {
-	for col, _ := range board {
-		if col <= y {
-			continue
-		}
-		if board[col][x] == 'Q' || board[col][x] == 'R' {
+	col := y + 1
+	row := x
+	for col <= h {
+		switch board[col][row] {
+		case 'R':
 			return true
+		case 'P':
+			return false
+		case 'Q':
+			return true
+		case 'B':
+			return false
 		}
+		col++
 	}
 	return false
 }
 
 func CheckUp(x int, y int, w int, h int, board []string) bool {
-	for col, _ := range board {
-		if col == y {
-			break
-		}
-		if board[col][x] == 'Q' || board[col][x] == 'R' {
+	col := y - 1
+	row := x
+	for col >= 0 {
+		switch board[col][row] {
+		case 'R':
 			return true
+		case 'P':
+			return false
+		case 'Q':
+			return true
+		case 'B':
+			return false
 		}
+		col--
 	}
 	return false
 }
