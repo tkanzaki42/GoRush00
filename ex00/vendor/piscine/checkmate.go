@@ -6,8 +6,7 @@ func Checkmate(str []string) {
 		PutMsg(errorMessage)
 		return
 	}
-	x, y := GetKingPosition(str)
-	w, h := GetBoardSize(str)
-	message := IsWinning(x, y, w, h, str)
+	x, y, size := GetKingPosition(str)
+	message := IsWinning(x, y, size, str)
 	PutMsg(message)
 }

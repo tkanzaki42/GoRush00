@@ -1,12 +1,16 @@
 package piscine
 
-func GetKingPosition(input []string) (x, y int) {
+func GetKingPosition(input []string) (x, y, size int) {
+	king_x, king_y, size := -1, 0, 0
 	for y, _ := range input {
-		for x, c := range input[y] {
-			if c == 'K' {
-				return x, y
+		if king_x == -1 {
+			for x, c := range input[y] {
+				if c == 'K' {
+					king_x, king_y = x, y
+				}
 			}
 		}
+		size = y
 	}
-	return -1, -1
+	return king_x, king_y, size
 }
