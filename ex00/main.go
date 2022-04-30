@@ -28,9 +28,9 @@ func main() {
 	piscine.Checkmate(board)
 	board = []string{
 		"....",
-		".K..",
+		"..K.",
 		"....",
-		".R..",
+		"B...",
 	}
 	piscine.Checkmate(board)
 }
