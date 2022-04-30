@@ -12,4 +12,25 @@ func main() {
 		"....",
 	}
 	piscine.Checkmate(board)
+	board = []string{
+		"R...",
+		".K..",
+		"....",
+		"....",
+	}
+	piscine.Checkmate(board)
+	board = []string{
+		"....",
+		".K..",
+		"....",
+		"....",
+	}
+	piscine.Checkmate(board)
+	board = []string{
+		"....",
+		"..K.",
+		"....",
+		"B...",
+	}
+	piscine.Checkmate(board)
 }

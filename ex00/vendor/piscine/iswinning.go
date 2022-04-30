@@ -1,6 +1,7 @@
 package piscine
 
-func CheckmateKing(x int, y int, w int, h int, board []string) string {
+func IsWinning(x int, y int, size int, board []string) string {
+	w, h := size, size
 	if CheckUp(x, y, w, h, board) ||
 		CheckUpperRight(x, y, w, h, board) ||
 		CheckRight(x, y, w, h, board) ||
