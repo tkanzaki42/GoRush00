@@ -2,7 +2,7 @@ package piscine
 
 import "ft"
 
-func PutError(err string) {
+func PutMsg(err string) {
 	for _, s := range err {
 		ft.PrintRune(s)
 	}
