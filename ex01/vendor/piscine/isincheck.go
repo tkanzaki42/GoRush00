@@ -1,6 +1,6 @@
 package piscine
 
-func IsWinning(x int, y int, size int, board []string) string {
+func IsInCheck(x int, y int, size int, board []string) bool {
 	w, h := size, size
 	if CheckUp(x, y, w, h, board) ||
 		CheckUpperRight(x, y, w, h, board) ||
@@ -10,9 +10,9 @@ func IsWinning(x int, y int, size int, board []string) string {
 		CheckLowerLeft(x, y, w, h, board) ||
 		CheckLeft(x, y, w, h, board) ||
 		CheckUpperLeft(x, y, w, h, board) {
-		return "Success"
+		return true
 	} else {
-		return "Fail"
+		return false
 	}
 }
 
