@@ -1,9 +1,12 @@
 package piscine
 
-func Validate(board []string) string{
+func Validate(board []string) string {
 	len_col, len_row := 0, 0
 	pre_col := 0
 	k_count := 0
+	if board == nil {
+		return "There is no board."
+	}
 	for y, row := range board {
 		len_col = 0
 		for _, r := range row {
