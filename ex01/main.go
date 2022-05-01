@@ -1,11 +1,16 @@
 package main
 
 import (
+	"flag"
 	"piscine"
 )
 
 func main() {
-	board := []string{
+	f := flag.String("flag", "command", "command or file")
+	flag.Parse()
+	board := piscine.GetMap(*f)
+	piscine.Checkmate(board)
+	board = []string{
 		"....",
 		".k..",
 		"....",
