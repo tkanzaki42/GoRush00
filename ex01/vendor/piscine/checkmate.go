@@ -9,7 +9,15 @@ func Checkmate(str []string) {
 	x, y, size := GetKingPosition(str)
 	incheck := IsInCheck(x, y, size, str)
 	if incheck {
-		PutMsg("Success")
+		for i := -1; i <= 1; i++ {
+			for j := -1; j <= 1; j++ {
+				if IsMovable(x+j, y+i, size, str) {
+					PutMsg("Success(in check)")
+					return
+				}
+			}
+		}
+		PutMsg("Success(checkmate)")
 	} else {
 		PutMsg("Fail")
 	}
