@@ -3,7 +3,8 @@ package piscine
 func Validate(board []string) string {
 	len_col, len_row := 0, 0
 	pre_col := 0
-	k_count := 0
+	player_k_count := 0
+	enemy_k_count := 0
 	if board == nil {
 		return "There is no board."
 	}
@@ -14,7 +15,10 @@ func Validate(board []string) string {
 				len_col++
 			}
 			if r == 'K' {
-				k_count++
+				player_k_count++
+			}
+			if r == 'k' {
+				enemy_k_count++
 			}
 		}
 		len_row++
@@ -26,8 +30,11 @@ func Validate(board []string) string {
 	if len_col != len_row {
 		return "Not a square."
 	}
-	if k_count != 1 {
-		return "The number of kings is wrong."
+	if player_k_count != 1 {
+		return "The number of player kings is wrong."
+	}
+	if enemy_k_count != 1 {
+		return "The number of enemy kings is wrong."
 	}
 	return ""
 }

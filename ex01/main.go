@@ -6,31 +6,17 @@ import (
 
 func main() {
 	board := []string{
-		"R...",
-		".K..",
-		"..P.",
 		"....",
-	}
-	piscine.Checkmate(board)
-	board = []string{
-		"R...",
-		".K..",
+		".k..",
 		"....",
-		"....",
+		".KN.",
 	}
 	piscine.Checkmate(board)
 	board = []string{
 		"....",
+		".k..",
 		".K..",
 		"....",
-		"....",
-	}
-	piscine.Checkmate(board)
-	board = []string{
-		"....",
-		"..K.",
-		"....",
-		"B...",
 	}
 	piscine.Checkmate(board)
 }
