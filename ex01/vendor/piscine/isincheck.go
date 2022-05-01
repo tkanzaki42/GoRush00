@@ -74,17 +74,21 @@ func CheckKnight(x int, y int, w int, h int, board []string, enemyMode bool) boo
 	}
 }
 func CheckLowerRight(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	col := y + 1
 	row := x + 1
@@ -100,6 +104,10 @@ func CheckLowerRight(x int, y int, w int, h int, board []string, enemyMode bool)
 			return false
 		case p:
 			return false
+		case k:
+			return false
+		case n:
+			return false
 		case q:
 			return true
 		case b:
@@ -112,17 +120,21 @@ func CheckLowerRight(x int, y int, w int, h int, board []string, enemyMode bool)
 }
 
 func CheckLowerLeft(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	col := y + 1
 	row := x - 1
@@ -142,6 +154,10 @@ func CheckLowerLeft(x int, y int, w int, h int, board []string, enemyMode bool) 
 			return true
 		case b:
 			return true
+		case k:
+			return false
+		case n:
+			return false
 		}
 		row--
 		col++
@@ -150,17 +166,21 @@ func CheckLowerLeft(x int, y int, w int, h int, board []string, enemyMode bool) 
 }
 
 func CheckUpperLeft(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	row := x - 1
 	col := y - 1
@@ -177,6 +197,10 @@ func CheckUpperLeft(x int, y int, w int, h int, board []string, enemyMode bool) 
 			return true
 		case b:
 			return true
+		case k:
+			return false
+		case n:
+			return false
 		}
 		row--
 		col--
@@ -185,17 +209,21 @@ func CheckUpperLeft(x int, y int, w int, h int, board []string, enemyMode bool) 
 }
 
 func CheckUpperRight(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	row := x + 1
 	col := y - 1
@@ -212,6 +240,10 @@ func CheckUpperRight(x int, y int, w int, h int, board []string, enemyMode bool)
 			return true
 		case b:
 			return true
+		case k:
+			return false
+		case n:
+			return false
 		}
 		row++
 		col--
@@ -219,17 +251,21 @@ func CheckUpperRight(x int, y int, w int, h int, board []string, enemyMode bool)
 }
 
 func CheckRight(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	col := y
 	row := x + 1
@@ -243,6 +279,10 @@ func CheckRight(x int, y int, w int, h int, board []string, enemyMode bool) bool
 			return true
 		case b:
 			return false
+		case k:
+			return false
+		case n:
+			return false
 		}
 		row++
 	}
@@ -250,17 +290,21 @@ func CheckRight(x int, y int, w int, h int, board []string, enemyMode bool) bool
 }
 
 func CheckLeft(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	col := y
 	row := x - 1
@@ -274,6 +318,10 @@ func CheckLeft(x int, y int, w int, h int, board []string, enemyMode bool) bool 
 			return true
 		case b:
 			return false
+		case k:
+			return false
+		case n:
+			return false
 		}
 		row--
 	}
@@ -281,17 +329,21 @@ func CheckLeft(x int, y int, w int, h int, board []string, enemyMode bool) bool 
 }
 
 func CheckDown(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	col := y + 1
 	row := x
@@ -305,6 +357,10 @@ func CheckDown(x int, y int, w int, h int, board []string, enemyMode bool) bool 
 			return true
 		case b:
 			return false
+		case k:
+			return false
+		case n:
+			return false
 		}
 		col++
 	}
@@ -312,17 +368,21 @@ func CheckDown(x int, y int, w int, h int, board []string, enemyMode bool) bool 
 }
 
 func CheckUp(x int, y int, w int, h int, board []string, enemyMode bool) bool {
-	r, p, q, b := ' ', ' ', ' ', ' '
+	r, p, q, b, k, n := ' ', ' ', ' ', ' ', ' ', ' '
 	if enemyMode {
 		r = 'R'
 		p = 'P'
 		q = 'Q'
 		b = 'B'
+		k = 'K'
+		n = 'N'
 	} else {
 		r = 'r'
 		p = 'p'
 		q = 'q'
 		b = 'b'
+		k = 'k'
+		n = 'n'
 	}
 	col := y - 1
 	row := x
@@ -335,6 +395,10 @@ func CheckUp(x int, y int, w int, h int, board []string, enemyMode bool) bool {
 		case q:
 			return true
 		case b:
+			return false
+		case k:
+			return false
+		case n:
 			return false
 		}
 		col--
